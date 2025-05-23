@@ -3,7 +3,7 @@
 
 A lightweight, stealthy HTTP/HTTPS proxy designed for **offensive security assessments**, traffic interception, and selective logging.  
 It supports **TLS interception with dynamic certificate generation**, **content-based filtering**, and **file-based logging** — all without noisy UI dependencies.
-
+![Preview](preview.png)
 ---
 
 ## Why SimpleHttpProxy?
