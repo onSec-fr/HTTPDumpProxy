@@ -1,13 +1,13 @@
 
-# 🕷️ SimpleHttpProxy
+# 🕷️ HTTPDumpProxy
 
 A lightweight, stealthy HTTP/HTTPS proxy designed for **offensive security assessments**, traffic interception, and selective logging.  
-It supports **TLS interception with dynamic certificate generation**, **content-based filtering**, and **file-based logging** — all without noisy UI dependencies.*
+It supports **TLS interception with dynamic certificate generation**, **content-based filtering**, and **file-based logging** — all without any .NET dependencies.
 
 ![Preview](preview.png)
 ---
 
-## Why SimpleHttpProxy?
+## Why HTTPDumpProxy?
 
 Most interception proxies today (Burp Suite, mitmproxy, etc.) are powerful — but often:
 
@@ -16,7 +16,7 @@ Most interception proxies today (Burp Suite, mitmproxy, etc.) are powerful — b
 - Make noisy system changes
 - Are overkill for focused, scriptable red team tasks
 
-**SimpleHttpProxy** is purpose-built for red teamers, pentesters, and malware analysts who need:
+**HTTPDumpProxy** is purpose-built for red teamers, pentesters, and malware analysts who need:
 
 - A minimalistic proxy that **"just works"**
 - **Programmatic control** without GUI overhead
@@ -55,7 +55,7 @@ On exit or timeout, system proxy settings and certificates are **fully removed**
 ## 🛠️ Usage
 
 ```
-SimpleHttpProxy.exe [--host 127.0.0.1] [--port 8888] [--timeout 10000] [--log requests.log] [--filter "regex"]
+HTTPDumpProxy.exe [--host 127.0.0.1] [--port 8888] [--timeout 10000] [--log requests.log] [--filter "regex"]
 ```
 
 ### Arguments
@@ -73,19 +73,19 @@ SimpleHttpProxy.exe [--host 127.0.0.1] [--port 8888] [--timeout 10000] [--log re
 ### 1. Capture Authorization headers
 
 ```
-SimpleHttpProxy.exe --filter "Authorization: Bearer" --log auth.log
+HTTPDumpProxy.exe --filter "Authorization: Bearer" --log auth.log
 ```
 
 ### 2. Passive password discovery
 
 ```
-SimpleHttpProxy.exe --filter "password=" --timeout 300000
+HTTPDumpProxy.exe --filter "password=" --timeout 300000
 ```
 
 ### 3. Targeting specific hostname
 
 ```
-SimpleHttpProxy.exe --filter "Host: internal.priv" --log internal.log
+HTTPDumpProxy.exe --filter "Host: internal.priv" --log internal.log
 ```
 
 ---
